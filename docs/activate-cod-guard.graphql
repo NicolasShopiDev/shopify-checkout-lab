@@ -1,0 +1,27 @@
+# Admin API mutation that turns the function on for a store once the app is deployed.
+# The metafield holds the merchant's settings, so limits change without a redeploy.
+mutation ActivateCodGuard {
+  paymentCustomizationCreate(
+    paymentCustomization: {
+      title: "COD guard"
+      enabled: true
+      functionHandle: "cod-guard"
+      metafields: [
+        {
+          namespace: "$app"
+          key: "function-configuration"
+          type: "json"
+          value: "{\"methodName\":\"cash on delivery\",\"maxOrderTotal\":300,\"allowedCountries\":[\"ES\"]}"
+        }
+      ]
+    }
+  ) {
+    paymentCustomization {
+      id
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

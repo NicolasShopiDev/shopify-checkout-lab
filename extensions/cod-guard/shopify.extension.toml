@@ -1,0 +1,16 @@
+api_version = "2026-10"
+
+[[extensions]]
+name = "COD guard"
+handle = "cod-guard"
+type = "function"
+description = "Hides cash on delivery above an order total and outside allowed shipping countries."
+
+  [[extensions.targeting]]
+  target = "cart.payment-methods.transform.run"
+  input_query = "src/cart_payment_methods_transform_run.graphql"
+  export = "cart-payment-methods-transform-run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"

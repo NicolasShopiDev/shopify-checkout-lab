@@ -1,0 +1,23 @@
+query CartPaymentMethodsTransformRunInput {
+  cart {
+    cost {
+      totalAmount {
+        amount
+      }
+    }
+    deliveryGroups {
+      deliveryAddress {
+        countryCode
+      }
+    }
+  }
+  paymentMethods {
+    id
+    name
+  }
+  paymentCustomization {
+    metafield(namespace: "$app", key: "function-configuration") {
+      jsonValue
+    }
+  }
+}

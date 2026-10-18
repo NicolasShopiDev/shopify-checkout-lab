@@ -1,0 +1,11 @@
+# Link this to your own Partner app first: `shopify app config link`
+client_id = ""
+name = "checkout-lab"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[access_scopes]
+scopes = "write_payment_customizations"
+
+[webhooks]
+api_version = "2026-10"

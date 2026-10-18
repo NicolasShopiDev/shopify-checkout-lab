@@ -1,0 +1,14 @@
+{
+  "name": "cod-guard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "typegen": "shopify app function typegen",
+    "build": "shopify app function build"
+  },
+  "dependencies": {
+    "@shopify/shopify_function": "^2.0.1"
+  }
+}

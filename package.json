@@ -1,0 +1,15 @@
+{
+  "name": "shopify-checkout-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Real merchant tickets solved with Shopify Functions, each one playable at nicolasmateos.com.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}
