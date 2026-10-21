@@ -1,0 +1,32 @@
+# Admin API mutation that turns the discount on for a store once the app is deployed.
+# Needs the write_discounts scope. The metafield holds the merchant's settings, so the
+# tags, the tiers and the message change without a redeploy. The function reads tiers
+# and message; Shopify reads tags as the input query's $tags variable (input_variables).
+# Keep tags in the metafield: a variable missing from it is passed to the query as null.
+# A past startsAt makes the discount active right away.
+mutation ActivateWholesaleTiers {
+  discountAutomaticAppCreate(
+    automaticAppDiscount: {
+      title: "Wholesale tiers"
+      functionHandle: "wholesale-tiers"
+      discountClasses: [PRODUCT]
+      startsAt: "2026-01-01T00:00:00Z"
+      metafields: [
+        {
+          namespace: "$app"
+          key: "function-configuration"
+          type: "json"
+          value: "{\"tags\":[\"wholesale\"],\"tiers\":[{\"minQuantity\":20,\"percentage\":10},{\"minQuantity\":50,\"percentage\":20}],\"message\":\"Wholesale {percentage}%\"}"
+        }
+      ]
+    }
+  ) {
+    automaticAppDiscount {
+      discountId
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

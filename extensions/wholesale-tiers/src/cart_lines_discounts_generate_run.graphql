@@ -1,0 +1,19 @@
+query CartLinesDiscountsGenerateRunInput($tags: [String!] = ["wholesale"]) {
+  cart {
+    buyerIdentity {
+      customer {
+        hasAnyTag(tags: $tags)
+      }
+    }
+    lines {
+      id
+      quantity
+    }
+  }
+  discount {
+    discountClasses
+    metafield(namespace: "$app", key: "function-configuration") {
+      jsonValue
+    }
+  }
+}

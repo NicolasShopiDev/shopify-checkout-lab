@@ -1,0 +1,30 @@
+# Admin API mutation that turns the validation on for a store once the app is deployed.
+# Needs the write_validations scope. The metafield holds the merchant's settings, so
+# the case size, the minimum and the messages change without a redeploy.
+# Per product overrides live on each variant as a custom.case_size integer metafield.
+mutation ActivateB2bCasePacks {
+  validationCreate(
+    validation: {
+      title: "B2B case packs"
+      enable: true
+      blockOnFailure: false
+      functionHandle: "b2b-case-packs"
+      metafields: [
+        {
+          namespace: "$app"
+          key: "function-configuration"
+          type: "json"
+          value: "{\"caseSize\":6,\"minimumSubtotal\":500}"
+        }
+      ]
+    }
+  ) {
+    validation {
+      id
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

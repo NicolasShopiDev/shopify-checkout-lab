@@ -1,0 +1,16 @@
+api_version = "2026-10"
+
+[[extensions]]
+name = "B2B case packs"
+handle = "b2b-case-packs"
+type = "function"
+description = "Blocks B2B checkouts that break case sizes or fall under the order minimum."
+
+  [[extensions.targeting]]
+  target = "cart.validations.generate.run"
+  input_query = "src/cart_validations_generate_run.graphql"
+  export = "cart-validations-generate-run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"

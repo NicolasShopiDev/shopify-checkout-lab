@@ -1,0 +1,18 @@
+api_version = "2026-10"
+
+[[extensions]]
+name = "Wholesale tiers"
+handle = "wholesale-tiers"
+type = "function"
+description = "Takes a percentage off each cart line for tagged wholesale customers, by quantity tier."
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/cart_lines_discounts_generate_run.graphql"
+  # The metafield's top-level "tags" key fills the query's $tags variable.
+  input_variables = { namespace = "$app", key = "function-configuration" }
+  export = "cart-lines-discounts-generate-run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"

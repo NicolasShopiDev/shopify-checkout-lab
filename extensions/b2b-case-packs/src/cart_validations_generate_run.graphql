@@ -1,0 +1,38 @@
+query CartValidationsGenerateRunInput {
+  buyerJourney {
+    step
+  }
+  cart {
+    buyerIdentity {
+      purchasingCompany {
+        company {
+          id
+        }
+      }
+    }
+    cost {
+      subtotalAmount {
+        amount
+      }
+    }
+    lines {
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          product {
+            title
+          }
+          metafield(namespace: "custom", key: "case_size") {
+            value
+          }
+        }
+      }
+    }
+  }
+  validation {
+    metafield(namespace: "$app", key: "function-configuration") {
+      jsonValue
+    }
+  }
+}
