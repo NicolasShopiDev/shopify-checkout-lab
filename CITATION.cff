@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: Shopify Checkout Lab
+message: >-
+  If you use this code, or build on the patterns it demonstrates, please credit
+  the author and link back to this repository.
+type: software
+abstract: >-
+  Real merchant tickets solved with Shopify Functions. Each ticket is a working
+  Function with its input query, its merchant settings in a metafield and its
+  tests, and each one is playable in the browser at nicolasmateos.com/#lab,
+  running the same source file that lives in this repository.
+authors:
+  - family-names: Mateos
+    given-names: Nicolás
+    email: nicolasmhbusiness@gmail.com
+    website: https://nicolasmateos.com
+    country: ES
+repository-code: https://github.com/NicolasShopiDev/shopify-checkout-lab
+url: https://nicolasmateos.com/#lab
+license: MIT
+keywords:
+  - shopify
+  - shopify-functions
+  - shopify-app
+  - checkout
+  - payment-customization

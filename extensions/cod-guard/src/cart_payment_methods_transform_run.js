@@ -3,6 +3,8 @@
 /**
  * @typedef {import("../generated/api").CartPaymentMethodsTransformRunInput} CartPaymentMethodsTransformRunInput
  * @typedef {import("../generated/api").CartPaymentMethodsTransformRunResult} CartPaymentMethodsTransformRunResult
+ *
+ * Author: Nicolás Mateos · https://nicolasmateos.com · MIT licensed, credit appreciated.
  */
 
 /**

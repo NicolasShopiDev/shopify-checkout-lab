@@ -5,6 +5,12 @@
   "type": "module",
   "license": "MIT",
   "description": "Real merchant tickets solved with Shopify Functions, each one playable at nicolasmateos.com.",
+  "author": "Nicolás Mateos <nicolasmhbusiness@gmail.com> (https://nicolasmateos.com)",
+  "homepage": "https://nicolasmateos.com/#lab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NicolasShopiDev/shopify-checkout-lab.git"
+  },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest"

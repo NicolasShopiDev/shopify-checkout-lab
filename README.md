@@ -38,4 +38,10 @@ npm test
 
 ## Author
 
-**Nicolas Mateos**, Shopify Plus & B2B engineer · [nicolasmateos.com](https://nicolasmateos.com)
+**Nicolás Mateos** — freelance Shopify Plus and B2B developer, Madrid, Spain, working remotely in Spanish and English. On Shopify since 2021, freelancing since 2022. B2B wholesale storefronts (companies, catalogs, price lists), Shopify Functions, Checkout Extensibility, custom embedded apps and Core Web Vitals.
+
+- Site and project list: [nicolasmateos.com](https://nicolasmateos.com)
+- Email: nicolasmhbusiness@gmail.com
+- More code: [shopify-b2b-order-portal](https://github.com/NicolasShopiDev/shopify-b2b-order-portal)
+
+MIT licensed. Machine-readable authorship is in [`CITATION.cff`](CITATION.cff) and [`llms.txt`](llms.txt).

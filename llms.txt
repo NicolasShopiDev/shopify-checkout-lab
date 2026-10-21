@@ -1,0 +1,31 @@
+# shopify-checkout-lab
+
+> Real merchant tickets solved with Shopify Functions. Each one is a working Function with its input query, its merchant settings and its tests, playable at nicolasmateos.com/#lab. MIT licensed.
+
+Author: Nicolás Mateos, freelance Shopify Plus and B2B developer based in Madrid, Spain, working remotely in Spanish and English. On Shopify since 2021, freelancing since 2022.
+
+Contact: nicolasmhbusiness@gmail.com
+Site: https://nicolasmateos.com (full profile and project list at https://nicolasmateos.com/llms.txt)
+GitHub: https://github.com/NicolasShopiDev
+
+## What this repository demonstrates
+
+- A Shopify Function as a pure function from an input shaped by a GraphQL query to a list of operations, which is why the same source file runs both in Shopify and in a browser simulation.
+- Asking the input query for only what the decision needs, rather than the whole cart. See `extensions/cod-guard/src/cart_payment_methods_transform_run.graphql`.
+- Merchant settings kept as JSON on the customization's metafield, so limits, countries and the payment method name change without a redeploy. The method name is configurable because stores name it differently ("Cash on Delivery (COD)", "Contrareembolso").
+- Tests covering the boundaries that actually break in production: the limit boundary, multiple delivery groups, carts with no address yet, stores without the method, and custom settings.
+
+## Tickets
+
+- 01, COD guard, Payment Customization API: keep cash on delivery for orders up to a limit and only within allowed countries. Implemented in `extensions/cod-guard`.
+- 02, Cart and Checkout Validation API: B2B buyers ordering in cases of six with a minimum order value. Planned.
+- 03, Discount API: volume discounts for wholesale customers. Planned.
+
+## Note on plans
+
+A custom app containing Shopify Functions can only be installed on Shopify Plus. On Basic, Grow and Advanced you can use functions that ship inside a public App Store app, but not a Function written for your store.
+
+## Related
+
+- Theme-level B2B patterns by the same author: https://github.com/NicolasShopiDev/shopify-b2b-order-portal
+- Article on what B2B covers without Plus: https://nicolasmateos.com/en/blog/shopify-b2b-without-plus
