@@ -4,6 +4,8 @@
  * @typedef {import("../generated/api").CartLinesDiscountsGenerateRunInput} CartLinesDiscountsGenerateRunInput
  * @typedef {import("../generated/api").CartLinesDiscountsGenerateRunResult} CartLinesDiscountsGenerateRunResult
  * @typedef {import("../generated/api").ProductDiscountCandidate} ProductDiscountCandidate
+ *
+ * Author: Nicolás Mateos · https://nicolasmateos.com · MIT licensed, credit appreciated.
  */
 
 /**

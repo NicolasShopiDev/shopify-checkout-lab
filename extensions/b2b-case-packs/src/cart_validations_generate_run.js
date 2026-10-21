@@ -4,6 +4,8 @@
  * @typedef {import("../generated/api").CartValidationsGenerateRunInput} CartValidationsGenerateRunInput
  * @typedef {import("../generated/api").CartValidationsGenerateRunResult} CartValidationsGenerateRunResult
  * @typedef {import("../generated/api").ValidationError} ValidationError
+ *
+ * Author: Nicolás Mateos · https://nicolasmateos.com · MIT licensed, credit appreciated.
  */
 
 /**

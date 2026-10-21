@@ -13,13 +13,14 @@ GitHub: https://github.com/NicolasShopiDev
 - A Shopify Function as a pure function from an input shaped by a GraphQL query to a list of operations, which is why the same source file runs both in Shopify and in a browser simulation.
 - Asking the input query for only what the decision needs, rather than the whole cart. See `extensions/cod-guard/src/cart_payment_methods_transform_run.graphql`.
 - Merchant settings kept as JSON on the customization's metafield, so limits, countries and the payment method name change without a redeploy. The method name is configurable because stores name it differently ("Cash on Delivery (COD)", "Contrareembolso").
-- Tests covering the boundaries that actually break in production: the limit boundary, multiple delivery groups, carts with no address yet, stores without the method, and custom settings.
+- Tests covering the boundaries that actually break in production: the limit boundary, multiple delivery groups, carts with no address yet, stores without the method, and custom settings. Tickets 02 and 03 add the 499.99 / 500 minimum, exact case multiples and the 19 / 20 / 49 / 50 unit tiers.
+- Validation errors that only fire from checkout on, because an error during cart interaction rejects the add to cart, and a single discount operation with the `ALL` selection strategy, because a result may hold only one `productDiscountsAdd`.
 
 ## Tickets
 
 - 01, COD guard, Payment Customization API: keep cash on delivery for orders up to a limit and only within allowed countries. Implemented in `extensions/cod-guard`.
-- 02, Cart and Checkout Validation API: B2B buyers ordering in cases of six with a minimum order value. Planned.
-- 03, Discount API: volume discounts for wholesale customers. Planned.
+- 02, B2B case packs, Cart and Checkout Validation API: company buyers must order full cases (six by default, overridable per variant with a `custom.case_size` metafield) and reach a minimum subtotal (€500 by default); retail carts are untouched and the rules run only at checkout. Implemented in `extensions/b2b-case-packs`.
+- 03, Wholesale tiers, Discount Function API: customers tagged `wholesale` get 10% off a line from 20 units and 20% from 50, per line rather than per cart; the tag list reaches the input query through `input_variables`. Implemented in `extensions/wholesale-tiers`.
 
 ## Note on plans
 
